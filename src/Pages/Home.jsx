@@ -90,7 +90,6 @@ const TECH_STACK = [
   "Node JS",
   "Bootstrap",
   "Vercel",
-  "Figma",
   "Github",
   "PHP",
   "MySQL",
@@ -158,7 +157,7 @@ const Home = () => {
       isTyping ? TYPING_SPEED : ERASING_SPEED
     );
     return () => clearTimeout(timeout);
-  }, [handleTyping]);
+  }, [handleTyping, isTyping]);
 
   return (
     <>
@@ -297,9 +296,12 @@ const Home = () => {
                       isHovering ? "scale-105" : "scale-100"
                     }`}
                   >
-                    <img
-                      src="Animation1.gif"
-                      alt="Developer Animation"
+                    <video
+                      src="/Animation.webm"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       className={`w-full h-full object-contain transition-all duration-500 ${
                         isHovering
                           ? "scale-[95%] sm:scale-[90%] md:scale-[90%] lg:scale-[90%] rotate-2"
